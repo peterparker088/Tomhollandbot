@@ -12,15 +12,6 @@ from Database import Database
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-#photo code kanged from @codes4ya Channel !
-#Add atleast 10+ Telegraph Links below 👇
-
-
-PHOTO = [
-    "https://telegra.ph/file/daa0e86574b573c68cd7d.jpg",
-
-]
-
 LOG_CHANNEL = BROADCAST_CHANNEL
 
 db = Database(DB_URL, SESSION)
@@ -119,19 +110,16 @@ async def start(bot, message):
             )
         )
     else:
-        await cmd.reply_photo(
-            photo=f"{random.choice(PHOTO)}",
-            caption=START_MSG,
+        await message.reply_text(
+            START_MSG.format(message.from_user.first_name),
+            parse_mode="Markdown",
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton
                             (
                                 "🔎Search Here", switch_inline_query_current_chat=''
-                            ),
-                        InlineKeyboardButton
-                            (
-                                "🤖More Botz", url="https://t.me/MT_Botz"
                             )
                     ],
                     [
@@ -147,7 +135,7 @@ async def start(bot, message):
                 ]
             )
         )
-       
+        StopPropagation
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
