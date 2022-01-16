@@ -12,10 +12,6 @@ from Database import Database
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
-LOG_CHANNEL = BROADCAST_CHANNEL
-
-db = Database(DB_URL, SESSION)
-
 #photo code kanged from @codes4ya Channel !
 #Add atleast 10+ Telegraph Links below 👇
 
@@ -24,6 +20,10 @@ PHOTO = [
     "https://telegra.ph/file/daa0e86574b573c68cd7d.jpg",
 
 ]
+
+LOG_CHANNEL = BROADCAST_CHANNEL
+
+db = Database(DB_URL, SESSION)
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
