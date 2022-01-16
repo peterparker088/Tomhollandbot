@@ -79,7 +79,7 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
             )
             poster=None
             if API_KEY:
@@ -97,8 +97,8 @@ async def filter(client, message):
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
-        )
+            [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
+            )
         poster=None
         if API_KEY:
             poster=await get_poster(search)
@@ -153,7 +153,7 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages")]
+                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
             )
             poster=None
             if API_KEY:
@@ -171,8 +171,8 @@ async def group(client, message):
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text=f"📃 Pages 1/{data['total']}",callback_data="pages")]
-        )
+            [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
+            )
         poster=None
         if API_KEY:
             poster=await get_poster(search)
@@ -224,7 +224,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -238,7 +238,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -262,7 +262,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -276,7 +276,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+                    [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', url='https://telegra.ph/GROUP-RULES-12-27-3')]
                 )
 
                 await query.edit_message_reply_markup( 
