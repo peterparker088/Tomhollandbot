@@ -5,8 +5,8 @@ from pyrogram import Client, filters
 import re, random, asyncio
 from pyrogram.errors import UserNotParticipant
 from LuciferMoringstar_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
-from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT
- 
+from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT, FUN
+
 BUTTONS = {}
 BOT = {}
 
@@ -300,7 +300,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-        
+
+        elif query.data == "fun":
+            buttons = [[
+                InlineKeyboardButton('Update Channel', callback_data='fun'),
+                InlineKeyboardButton('Source Code', url="https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot")
+                ],[
+                InlineKeyboardButton('💫Deploy Video💫', url=f'{TUTORIAL}')
+                ]]
+            await query.message.edit(text=f"{FUN}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data.startswith("pr0fess0r_99"):
             ident, file_id = query.data.split("#")
