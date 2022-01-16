@@ -110,12 +110,9 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_photo(
-            photo=random.choice(PICS),
-        await message.reply_text(
-            START_MSG.format(message.from_user.first_name),
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
+        await cmd.reply_photo(
+            photo=f"{random.choice(PICS)}",
+            caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
