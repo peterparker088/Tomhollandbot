@@ -15,6 +15,14 @@ logger = logging.getLogger(__name__)
 LOG_CHANNEL = BROADCAST_CHANNEL
 
 db = Database(DB_URL, SESSION)
+#photo code kanged from @codes4ya Channel !
+#Add atleast 10+ Telegraph Links below 👇
+
+
+PHOTO = [
+    "https://telegra.ph/file/daa0e86574b573c68cd7d.jpg",
+
+]
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
@@ -110,8 +118,8 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_photo(
-            photo=random.choice(PICS),
+        await cmd.reply_photo(
+            photo=f"{random.choice(PHOTO)}",
             caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
