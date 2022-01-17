@@ -295,19 +295,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='t.me/Mo_Tech_YT'),
-                    InlineKeyboardButton('Source Code', url=f'{TUTORIAL}')
+                    InlineKeyboardButton('🔙', callback_data='help'),
+                    InlineKeyboardButton('🗑️', callback_data='close_data')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "fun":
-            buttons = [[
-                InlineKeyboardButton('Update Channel', callback_data='fun'),
-                InlineKeyboardButton('Source Code', url="https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot")
-                ],[
-                InlineKeyboardButton('💫Deploy Video💫', url=f'{TUTORIAL}')
-                ]]
+            buttons = [
+                [
+                    InlineKeyboardButton('🔙', callback_data='help'),
+                    InlineKeyboardButton('🗑️', callback_data='close_data')
+                ]
+                ]
             await query.message.edit(text=f"{FUN}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data.startswith("pr0fess0r_99"):
