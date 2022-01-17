@@ -63,7 +63,7 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"pr0fess0r_99#{file_id}")]
                     )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
+            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAK7V2HlaDBPv98NZdhMw50NVSP4k2M2AAI2AgACFTDIV7hSrAMPW9JAHgQ')
             return
 
         if not btn:
@@ -305,8 +305,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('English🇬🇧', url="https://telegra.ph/GROUP-RULES-12-27-3"),
-                    InlineKeyboardButton('Malayalam🇮🇳', url="https://telegra.ph/Group-Rules-12-27-4"),
-                    InlineKeyboardButton('🗑️', callback_data='close_data')
+                    InlineKeyboardButton('Malayalam🇮🇳', url="https://telegra.ph/Group-Rules-12-27-4")
                 ]
                 ]
             await query.message.edit(text=f"{RULES}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
