@@ -10,7 +10,7 @@ from .Channel import (
    GENRES
 )
 
-HELP = """𝙷𝙴𝚈 {}
+HELP = """𝙷𝙴𝚈 {message.from_user.mention},
 𝘏𝘦𝘳𝘦 𝘐𝘴 𝘛𝘩𝘦 𝘏𝘦𝘭𝘱 𝘍𝘰𝘳 𝘔𝘺 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘴."""
 
 ABOUT ="""
@@ -25,5 +25,5 @@ ABOUT ="""
 ║┣⪼ 𝓑𝓾𝓲𝓵𝓭 𝓢𝓽𝓪𝓽𝓾𝓼 - v1.0.1 [ 𝙱𝙴𝚃𝙰 ]
 ║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪"""
 
-RULES = """𝙷𝙴𝚈 {}
+RULES = """𝙷𝙴𝚈 {message.from_user.mention},
 𝘏𝘦𝘳𝘦 𝘐𝘴 𝘛𝘩𝘦 RULES 𝘍𝘰𝘳 𝘔𝘺 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘴."""
