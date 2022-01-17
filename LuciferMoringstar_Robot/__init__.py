@@ -25,14 +25,5 @@ ABOUT ="""
 ║┣⪼ 𝓑𝓾𝓲𝓵𝓭 𝓢𝓽𝓪𝓽𝓾𝓼 - v1.0.1 [ 𝙱𝙴𝚃𝙰 ]
 ║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪"""
 
-FUN = """<b>FUN MODULE</b> 
-    
-<b>🎲 NOTHING MUCH JUST SOME FUN THINGS</b>
-t𝗋𝗒 𝗍𝗁𝗂𝗌 𝖮𝗎𝗍: 
-𝟣. /dice - Roll The Dice 
-𝟤. /Throw 𝗈𝗋 /Dart - 𝖳𝗈 𝖬𝖺𝗄𝖾 Drat 
-3. /Runs - Jokes 
-4. /Goal or /Shoot - To Make A Goal Or Shoot
-5. /basketball or /basket - basketball game
-6. /toss - Toss a coin
-7. /luck or /cownd - Spin the Lucky"""
+RULES = """𝙷𝙴𝚈 {}
+𝘏𝘦𝘳𝘦 𝘐𝘴 𝘛𝘩𝘦 RULES 𝘍𝘰𝘳 𝘔𝘺 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘴."""
