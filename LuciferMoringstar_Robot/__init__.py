@@ -10,41 +10,20 @@ from .Channel import (
    GENRES
 )
 
-HELP = """
-<b><u>Basic Commads</u></b>
+HELP = """𝙷𝙴𝚈 {}
+𝘏𝘦𝘳𝘦 𝘐𝘴 𝘛𝘩𝘦 𝘏𝘦𝘭𝘱 𝘍𝘰𝘳 𝘔𝘺 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘴."""
 
-➥ /start : check if am alive or dead
-➥ /about : About Me
-➥ /stats user Status
-
-<b><u>Bot Owner Only</u></b>
-
-➥ /broadcast Replay Any Message or Media
-➥ /ban_user  click ban_user more info
-➥ /unban_user click unban_user more info
-➥ /banned_users Banned User Details
-➥ /total How Many Files Added In Database
-➥ /logger  Get Logs
-➥ /delete Delete File From Database
-
-<b>[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
-
-@Mo_Tech_YT></b>
-"""
-
-ABOUT = """
-➥ Name : Auto Filter With IMDB
-    
-➥ Credits : Subin
-
-➥ Editing : [Muhammed RK](t.me/Mrk_YT)
-
-➥ Language : Python3
-
-➥ Library : Pyrogram Asyncio 1.13.0
-
-➥ Source Code : [Click Me](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
-"""
+ABOUT ="""
+╔════❰ ꪖ᥇ꪮꪊ𝓽 ꪑ𝘴ᧁ ❱═❍⊱❁۪۪
+║╭━━━━━━━━━━━━━━━➣ 
+║┣⪼ 𝙈𝙔 𝙉𝘼𝙈𝙀 - <a href="https://t.me/No_Way_Home_bot"> TomHolland </a>
+║┣⪼ Ⓓ︎Ⓔ︎Ⓥ︎1 - <a href="https://t.me/PeterParkerspide"> 𝙿𝚎𝚝𝚎𝚛ᵖᵃʳᵏᵉʳ </a>
+║┣⪼ 𝓛𝓲𝓫𝓻𝓪𝓻𝓻𝔂 - 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
+║┣⪼ 𝓛𝓪𝓷𝓰𝓾𝓪𝓰𝓮 - 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
+║┣⪼ 𝓓𝓪𝓽𝓪 𝓑𝓪𝓼𝓮 - 𝙼𝙾𝙽𝙶𝙾 𝙳𝙱
+║┣⪼ 𝓑𝓸𝓽 𝓼𝓮𝓻𝓿𝓮𝓻 -  𝙷𝙴𝚁𝙾𝙺𝚄
+║┣⪼ 𝓑𝓾𝓲𝓵𝓭 𝓢𝓽𝓪𝓽𝓾𝓼 - v1.0.1 [ 𝙱𝙴𝚃𝙰 ]
+║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍⊱❁۪۪"""
 
 FUN = """
 ➥ Name : Auto Filter With IMDB
