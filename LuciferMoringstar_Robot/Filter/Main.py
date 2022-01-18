@@ -1,5 +1,5 @@
 # (c) PR0FESS0R-99
-from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME
+from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME, SEPLLING_MODE_TEXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re, random, asyncio
@@ -9,6 +9,13 @@ from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT, RULES
 
 BUTTONS = {}
 BOT = {}
+
+PHOTO = [
+"https://telegra.ph/file/4fef89ba193f970f9493e.jpg",
+"https://telegra.ph/file/df8105e34e418737ffc8d.jpg",
+"https://telegra.ph/file/949852e543d2f58ee4711.jpg",
+"https://telegra.ph/file/e91a5d9bb18fa11fc1a5f.jpg",
+  ]
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
@@ -130,12 +137,8 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            m = await message.reply(
-            text=f"""
-<b>🥺 Dear {message.from_user.mention}
-Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
-<i>Please Go to Google and Confirm the Correct Spelling 🥺🙏</i></b>""",
-            reply_markup=InlineKeyboardMarkup(
+            await message.reply_photo(photo=random.choice(PHOTO), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
+                reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url="https://www.google.com")
