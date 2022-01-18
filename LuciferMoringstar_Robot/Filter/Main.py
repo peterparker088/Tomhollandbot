@@ -79,7 +79,7 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
             poster=None
             if API_KEY:
@@ -97,7 +97,7 @@ async def filter(client, message):
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
         poster=None
         if API_KEY:
@@ -141,7 +141,7 @@ Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
                         InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url="https://www.google.com")
                     ],
                     [       
-                        InlineKeyboardButton("🗑️", callback_data='close_data'),
+                        InlineKeyboardButton("🗑️", callback_data='close'),
                         InlineKeyboardButton("⚠️ Rules", callback_data='rules')
                     ]
                 ]
@@ -164,7 +164,7 @@ Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
             poster=None
             if API_KEY:
@@ -182,7 +182,7 @@ Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
         )
         poster=None
         if API_KEY:
@@ -235,7 +235,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -249,7 +249,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -273,7 +273,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -287,7 +287,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close_data'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -307,7 +307,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('🔙', callback_data='help'),
-                    InlineKeyboardButton('🗑️', callback_data='close_data')
+                    InlineKeyboardButton('🗑️', callback_data='close')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
