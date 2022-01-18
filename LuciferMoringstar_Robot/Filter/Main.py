@@ -196,7 +196,7 @@ Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
 def get_size(size):
     """Get size in readable format"""
 
-    units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
+    units = ["Bytes", "ᴷᴮ", "ᴹᴮ", "ᴳᴮ", "ᵀᴮ", "ᴾᴮ", "ᴱᴮ"]
     size = float(size)
     i = 0
     while size >= 1024.0 and i < len(units):
