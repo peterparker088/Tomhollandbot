@@ -38,8 +38,8 @@ PHOTO = [
 "https://telegra.ph/file/6bd13114bf4b6bb20e57f.jpg",
 "https://telegra.ph/file/ce3a7a1a2a7b7a1038815.jpg"
 ]
-
 db = Database(DB_URL, SESSION)
+
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
