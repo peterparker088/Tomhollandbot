@@ -10,15 +10,6 @@ from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT, RULES
 BUTTONS = {}
 BOT = {}
 
-PICS = [
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg",
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg",
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg"
-]
-
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
     if message.text.startswith("/"):
@@ -139,7 +130,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            m = await message.reply_photo(photo=random.choice(PICS)
+            m = await message.reply(
             text=f"""
 <b>🥺 Dear {message.from_user.mention}
 Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
