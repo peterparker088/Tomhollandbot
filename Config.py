@@ -4,11 +4,12 @@ from os import environ
 
 id_pattern = re.compile(r'^.\d+$')
 
-# Bot information
+# Bot Settings
 SESSION = environ.get('SESSION', 'LuciferMoringstar_Robot')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
+BOT_USERNAME = environ.get('BOT_USERNAME', 'LuciferMoringstar_Robot')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
