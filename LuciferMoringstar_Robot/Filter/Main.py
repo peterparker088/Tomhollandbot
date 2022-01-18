@@ -130,9 +130,8 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            m = await message.reply_photo(
-                photo="https://telegra.ph/file/b82fa864bb99a8e92a312.jpg",
-                text=f"""
+            m = await message.reply(
+            text=f"""
 <b>🥺 Dear {message.from_user.mention}
 Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
 <i>Please Go to Google and Confirm the Correct Spelling 🥺🙏</i></b>""",
