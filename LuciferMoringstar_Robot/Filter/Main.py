@@ -130,7 +130,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            m = await bot.send_photo(
+            m = await message.reply_photo(
                 chat_id = update.chat.id,
                 photo="https://telegra.ph/file/b82fa864bb99a8e92a312.jpg",
                 text=f"""
