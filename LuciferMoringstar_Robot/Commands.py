@@ -120,6 +120,8 @@ async def start(bot, message):
             )
         )
     else:
+         msg = await message.reply("Processing...⏳", quote=True)
+    try:
         await message.reply_photo(photo=random.choice(PHOTO), caption=START_MSG.format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [[
