@@ -11,10 +11,10 @@ BUTTONS = {}
 BOT = {}
 
 PHOTO = [
-"https://telegra.ph/file/4fef89ba193f970f9493e.jpg",
-"https://telegra.ph/file/df8105e34e418737ffc8d.jpg",
-"https://telegra.ph/file/949852e543d2f58ee4711.jpg",
-"https://telegra.ph/file/e91a5d9bb18fa11fc1a5f.jpg",
+"https://telegra.ph/file/b94116a347f395274fa43.jpg",
+"https://telegra.ph/file/b94116a347f395274fa43.jpg",
+"https://telegra.ph/file/b94116a347f395274fa43.jpg",
+"https://telegra.ph/file/b94116a347f395274fa43.jpg",
   ]
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
