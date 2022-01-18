@@ -141,7 +141,8 @@ Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
                         InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url="https://www.google.com")
                     ],
                     [       
-                        InlineKeyboardButton("Did not understand🥲", url="https://t.me/joinchat/6WZ0z0AQ0E8yMDdl")
+                        InlineKeyboardButton("🗑️", callback_data='close_data'),
+                        InlineKeyboardButton("⚠️ Rules", callback_data='rules')
                     ]
                 ]
             )
@@ -314,8 +315,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "rules":
             buttons = [
                 [
-                    InlineKeyboardButton('English🇬🇧', url="https://telegra.ph/GROUP-RULES-12-27-3"),
-                    InlineKeyboardButton('Malayalam🇮🇳', url="https://telegra.ph/Group-Rules-12-27-4")
+                    InlineKeyboardButton('🇬🇧', url="https://telegra.ph/GROUP-RULES-12-27-3"),
+                    InlineKeyboardButton('🇮🇳', url="https://telegra.ph/Group-Rules-12-27-4")
                 ]
                 ]
             await query.message.edit(text=f"{RULES}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
