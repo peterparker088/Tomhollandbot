@@ -1,9 +1,11 @@
+
 import os
 import logging
+import random
 from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID, BOT_USERNAME  
+from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID, START_IMG 
 from LuciferMoringstar_Robot.Utils import Media, get_file_details 
 from LuciferMoringstar_Robot.Broadcast import broadcast
 from LuciferMoringstar_Robot import ABOUT
@@ -13,6 +15,29 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 LOG_CHANNEL = BROADCAST_CHANNEL
+PHOTO = [
+"https://telegra.ph/file/dee532d5191d2a4c4da19.jpg",
+"https://telegra.ph/file/af7579d49983046c54ebb.jpg",
+"https://telegra.ph/file/3b786420ffe1885dd9544.jpg",
+"https://telegra.ph/file/d918f631cbb0cd5317652.jpg",
+"https://telegra.ph/file/ef529c0769d28f76c99ea.jpg",
+"https://telegra.ph/file/0da8ce13b448341f51af8.jpg",
+"https://telegra.ph/file/5b0b27b23bb038f6a68f8.jpg",
+"https://telegra.ph/file/9c9779527e5ad4f0dc3d3.jpg",
+"https://telegra.ph/file/d9fb5fe8613b6d374579c.jpg",
+"https://telegra.ph/file/3249490c587149cb40863.jpg",
+"https://telegra.ph/file/24278d104c211d114702e.jpg",
+"https://telegra.ph/file/3b786420ffe1885dd9544.jpg",
+"https://telegra.ph/file/0a4699547f29c25d25e1a.jpg",
+"https://telegra.ph/file/7b4664cb01d3a7a5bab04.jpg",
+"https://telegra.ph/file/671aa78098150f3afeddf.jpg",
+"https://telegra.ph/file/ca2212b536f5b0976321c.jpg",
+"https://telegra.ph/file/35cf3437f1d149ed79149.jpg",
+"https://telegra.ph/file/7ac05897b20921932db45.jpg",
+"https://telegra.ph/file/392dd7aeca184b47bb3fa.jpg",
+"https://telegra.ph/file/6bd13114bf4b6bb20e57f.jpg",
+"https://telegra.ph/file/ce3a7a1a2a7b7a1038815.jpg"
+]
 
 db = Database(DB_URL, SESSION)
 
@@ -110,29 +135,14 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_text(
-            START_MSG.format(message.from_user.first_name),
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
+        await message.reply_photo(photo=random.choice(PHOTO), caption=START_MSG.format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton
-                            (
-                                "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url=f'http://t.me/tom_holland_spider_bot?startgroup=true'
-                            )
-                    ],
-                    [
-                        InlineKeyboardButton
-                            (
-                                "🤔Help", callback_data="help"
-                            ),
-                        InlineKeyboardButton
-                            (
-                                "About🤠", callback_data="about"
-                            )
-                    ]
-                ]
+                [[
+                InlineKeyboardButton("➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="http://t.me/Autofilter_v3sbot?startgroup=botstart")
+                ],[
+                InlineKeyboardButton("HELP ⚙️", callback_data="help"),
+                InlineKeyboardButton("ABOUT 😎", callback_data="about")
+                ]]
             )
         )
         StopPropagation
