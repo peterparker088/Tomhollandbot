@@ -4,28 +4,20 @@ from os import environ
 
 id_pattern = re.compile(r'^.\d+$')
 
-
-# Bot Settings
+# Bot information
 SESSION = environ.get('SESSION', 'LuciferMoringstar_Robot')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
-BOT_USERNAME = environ.get('BOT_USERNAME', 'LuciferMoringstar_Robot')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/497f21338351cef6cc1fd.jpg https://telegra.ph/file/60ec3a4a522d06b5e4a2c.jpg https://telegra.ph/file/90345e9255d32f5c8ad75.jpg https://telegra.ph/file/e81e25e0c3ee753530c7f.jpg https://telegra.ph/file/41aaa2bc85bad6986641b.jpg https://telegra.ph/file/78f1bd0309d6607dc44fa.jpg https://telegra.ph/file/4e0bbf59af8c55dfce9ff.jpg https://telegra.ph/file/7ae43915facd8eb0a3d00.jpg https://telegra.ph/file/2e91f2168859795bebec1.jpg https://telegra.ph/file/2c91985dd562ea835ef3b.jpg https://telegra.ph/file/daab7f2becc4ddab45586.jpg https://telegra.ph/file/7beda83fbe243952f6768.jpg https://telegra.ph/file/c3fdb36e73269c2e4d629.jpg https://telegra.ph/file/07af4bdb370593909aa51.jpg')).split()
 
 BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", ""))
 ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
-DB_URL = environ.get("DATABASE_1", "")
-BROADCAST_AS_COPY = bool(environ.get("BROADCAST", True))
-
-
-# Seplling Mode
-SEPLLING_MODE = environ.get("SEPLLING_MODE_ON_OR_OFF", "on").lower()
-SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_TEXT")
+DB_URL = os.environ.get("DATABASE_1", "")
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
@@ -35,7 +27,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('FORCES_SUB')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
-TUTORIAL = "https://youtu.be/-xDQbsF-wek"
+TUTORIAL = "https://youtu.be/5hnYOKBzyi8"
 # MongoDB information
 DATABASE_URI = environ['DATABASE_2']
 DATABASE_NAME = environ['BOT_NAME']
