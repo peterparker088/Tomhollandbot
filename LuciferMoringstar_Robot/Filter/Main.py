@@ -131,7 +131,6 @@ async def group(client, message):
                 )
         else:
             m = await message.reply_photo(
-                chat_id = update.chat.id,
                 photo="https://telegra.ph/file/b82fa864bb99a8e92a312.jpg",
                 text=f"""
 <b>🥺 Dear {message.from_user.mention}
