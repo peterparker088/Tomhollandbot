@@ -20,6 +20,9 @@ ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
 DB_URL = os.environ.get("DATABASE_1", "")
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
 
+# Seplling Mode
+SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_TEXT")
+
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
