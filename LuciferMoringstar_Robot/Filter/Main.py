@@ -131,7 +131,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            await message.reply_video(photo=random.choice(SEPLLING_MODE_VIDEO), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
+            await message.reply_video(video=random.choice(SEPLLING_MODE_VIDEO), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
                 reply_markup=InlineKeyboardMarkup(
                 [
                     [
