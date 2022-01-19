@@ -1,5 +1,5 @@
 # (c) PR0FESS0R-99
-from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME, SEPLLING_MODE_TEXT
+from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME, SEPLLING_MODE_TEXT, SEPLLING_MODE_PICS
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re, random, asyncio
@@ -137,7 +137,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            await message.reply_photo(photo=random.choice(PHOTO), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
+            await message.reply_photo(photo=random.choice(SEPLLING_MODE_PICS), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
                 reply_markup=InlineKeyboardMarkup(
                 [
                     [
