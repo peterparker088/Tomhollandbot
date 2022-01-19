@@ -15,14 +15,7 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 LOG_CHANNEL = BROADCAST_CHANNEL
-PHOTO = [
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg",
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg",
-"https://telegra.ph/file/b94116a347f395274fa43.jpg",
-"https://telegra.ph/file/8e0180b63d51805dcbd6a.jpg"
-]
+
 db = Database(DB_URL, SESSION)
 
 
