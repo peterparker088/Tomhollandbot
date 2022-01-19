@@ -150,8 +150,8 @@ async def group(client, message):
                 ]
             )
         )
-            await asyncio.sleep(60) 
-                await LuciferMoringstar_Robot.delete()
+            time.sleep(20)
+            await m.delete()
             return
         if not btn:
             return
