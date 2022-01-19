@@ -25,7 +25,8 @@ PICS = (environ.get('PICS', 'https://telegra.ph/file/497f21338351cef6cc1fd.jpg h
 SEPLLING_MODE_PICS = (environ.get('SEPLLING_MODE_PICS', 'https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/90345e9255d32f5c8ad75.jpg https://telegra.ph/file/e81e25e0c3ee753530c7f.jpg https://telegra.ph/file/41aaa2bc85bad6986641b.jpg https://telegra.ph/file/78f1bd0309d6607dc44fa.jpg https://telegra.ph/f https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4 https://telegra.ph/file/7658da66b1771aabd026c.mp4')).split()
 
 # Seplling Mode
-SEPLLING_MODE_TEXT = environ.get("SEPLLING_
+SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_TEXT")
+
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
