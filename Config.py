@@ -41,13 +41,6 @@ DATABASE_URI = environ['DATABASE_2']
 DATABASE_NAME = environ['BOT_NAME']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
-# OPTIONAL - To set alternate BOT COMMANDS
-ADD_FILTER_CMD = os.environ.get("ADD_FILTER_CMD", "add")
-DELETE_FILTER_CMD = os.environ.get("DELETE_FILTER_CMDD", "del")
-DELETE_ALL_CMD = os.environ.get("DELETE_ALL_CMDD", "delall")
-CONNECT_COMMAND = os.environ.get("CONNECT_COMMANDD", "connect")
-DISCONNECT_COMMAND = os.environ.get("DISCONNECT_COMMANDD", "disconnect")
-
 # Messages
 default_start_msg = """
 **Hi, I'm Auto Filter V3**
