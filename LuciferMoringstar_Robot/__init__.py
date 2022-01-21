@@ -28,8 +28,3 @@ ABOUT ="""
 RULES = """<b>𝙷𝙴𝚈 {message.from_user.mention},
 𝘏𝘦𝘳𝘦 𝘐𝘴 𝘛𝘩𝘦 RULES 𝘍𝘰𝘳 𝘔𝘺 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘴."""
 
-
-SPL = """<b>🥺 Dear {message.from_user.mention}
-Sorry  bro ,{search} No Movie/Series Related to the Given Word Was Found 🥺
-<i>Please Go to Google and Confirm the Correct Spelling 🥺🙏</i></b>"""
-  
