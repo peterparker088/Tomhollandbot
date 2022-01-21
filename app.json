@@ -62,6 +62,10 @@
             "value": "",
             "required": false
         },
+        "PICS": {
+            "description": "Add some telegraph link of pictures .",
+            "value": ""
+        },
         "CUSTOM_FILE_CAPTION": {
             "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
             "value": "",
