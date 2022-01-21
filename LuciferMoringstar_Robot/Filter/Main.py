@@ -292,8 +292,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return
-     msg = await message.reply("Processing...⏳", quote=True)
-    else:
         elif query.data == "help":
             buttons = [[
                 InlineKeyboardButton('Update Channel', callback_data='fun'),
