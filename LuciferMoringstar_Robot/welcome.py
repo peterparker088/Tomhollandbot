@@ -7,8 +7,13 @@ from pyrogram.types import Message, User
 @Client.on_message(filters.new_chat_members)
 async def welcome(bot,message):
 	chatid= message.chat.id
-	await bot.send_message(text=fHey , {u.mention}, Welcome to {message.chat.title}",chat_id=chatid)
-	
+	await bot.send_message(text=f"Hey , {u.mention}, Welcome to {message.chat.title}",chat_id=chatid)
+
+@Client.on_message(filters.add_chat_members)
+async def add(bot,message):
+	chatid= message.chat.id
+	await bot.send_message(text=f"Hey , {u.mention}, Welcome to {message.chat.title}",chat_id=chatid)
+		
 @Client.on_message(filters.left_chat_member)
 async def goodbye(bot,message):
 	chatid= message.chat.id
