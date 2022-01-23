@@ -18,7 +18,7 @@ async def join(client, message):
         InlineKeyboardButton("🔰 Canneil 🔰", url="https://t.me/flimsupdate")
       ],
       [
-        InlineKeyboardButton("♻️ Share Group ♻️", url="https://t.me/share/url?url="https://t.me/tomhollandmovies")
+        InlineKeyboardButton("♻️ Share Group ♻️", url="https://t.me/share/url?url=https://t.me/tomhollandmovies")
      ]]))
 
     await asyncio.sleep(50)
