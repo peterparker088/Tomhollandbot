@@ -85,10 +85,8 @@ async def start(bot, message):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖥️ Deploy Now 🖥️', url=f'{TUTORIAL}')
-                    ],
-                    [
-                        InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat='')
+                        InlineKeyboardButton('𝗝𝗢𝗜𝗡 𝗖𝗛𝗔𝗡𝗡𝗘𝗟', url="https://t.me/flimsupdate"),
+                        InlineKeyboardButton('𝗝𝗢𝗜𝗡 𝗚𝗥𝗢𝗨𝗣', url=""https://t.me/tomhollandmovies)
                     ]
                     ]
                 await bot.send_cached_media(
