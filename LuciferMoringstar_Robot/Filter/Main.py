@@ -80,7 +80,7 @@ async def filter(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
             poster=None
             if API_KEY:
@@ -98,7 +98,7 @@ async def filter(client, message):
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
         poster=None
         if API_KEY:
@@ -138,7 +138,7 @@ async def group(client, message):
                         InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url="https://google.com/search?q={search}")
                     ],
                     [       
-                        InlineKeyboardButton("🗑️", callback_data='close_data'),
+                        InlineKeyboardButton("🗑️", callback_data="close_data"),
                         InlineKeyboardButton("⚠️ Rules", callback_data='rules')
                     ]
                 ]
@@ -162,7 +162,7 @@ async def group(client, message):
         else:
             buttons = btn
             buttons.append(
-                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
             )
             poster=None
             if API_KEY:
@@ -180,7 +180,7 @@ async def group(client, message):
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
         )    
         buttons.append(
-            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+            [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
         )
         poster=None
         if API_KEY:
@@ -233,7 +233,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -247,7 +247,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -271,7 +271,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -285,7 +285,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data='close'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
