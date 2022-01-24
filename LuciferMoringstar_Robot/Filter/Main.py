@@ -271,7 +271,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"'),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
+                    [InlineKeyboardButton(text="🗓 1/1",callback_data="pages"),InlineKeyboardButton('🗑', callback_data="close_data"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
                 )
 
                 await query.edit_message_reply_markup( 
