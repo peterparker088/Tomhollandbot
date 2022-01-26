@@ -164,15 +164,6 @@ async def broadcast_handler_open(_, m):
         await broadcast(m, db)
 
 
-@Client.on_message(filters.private & filters.command("stats"))
-async def sts(c, m):
-    await m.reply_text(
-        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}``",
-        parse_mode="Markdown",
-        quote=True
-    )
-
-
 @Client.on_message(filters.private & filters.command("ban_user"))
 async def ban(c, m):
     if m.from_user.id not in ADMIN_ID:
@@ -274,13 +265,13 @@ async def _banned_usrs(c, m):
 
 
 
-@Client.on_message(filters.command('total') & filters.user(ADMINS))
+@Client.on_message(filters.command('stats') & filters.user(ADMINS))
 async def total(bot, message):
     """Show total files in database"""
     msg = await message.reply("Processing...⏳", quote=True)
     try:
         total = await Media.count_documents()
-        await msg.edit(f'📁 Saved files: {total},⚡ TOTAL USERS: {await db.total_users_count()}')
+        await msg.edit(f'📂 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂 : {total}     ⚡ TOTAL USERS : {await db.total_users_count()}     🔖 TOTAL CHATS : {await db.total_chat_count()}')
     except Exception as e:
         logger.exception('Failed to check total files')
         await msg.edit(f'Error: {e}')
