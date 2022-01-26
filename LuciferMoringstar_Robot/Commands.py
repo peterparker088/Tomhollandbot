@@ -271,7 +271,7 @@ async def sts(c, m):
         await m.delete()
         return
     await m.reply_text(
-        text=f"**📂 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂** `{total}`\n\n**⚡ TOTAL USERS :** `{await db.total_users_count()}`\n\n**🔖 TOTAL CHATS:** `{await db.total_chat_count()}`",
+        text=f"**📂 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂** `{await Media.count_documents()}`\n\n**⚡ TOTAL USERS :** `{await db.total_users_count()}`\n\n**🔖 TOTAL CHATS:** `{await db.total_chat_count()}`",
         parse_mode="Markdown",
         quote=True
     )
