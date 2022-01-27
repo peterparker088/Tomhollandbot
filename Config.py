@@ -46,7 +46,7 @@ default_start_msg = """
 **Hi, I'm Auto Filter V3**
 Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.
 """
-START_TXT = environ.get('START_TXT', default_start_msg)
+START_TXT = environ.get('START_TXT', default_start_txt)
 START_IMG = environ.get("START_IMG", "")
 
 FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
