@@ -112,7 +112,7 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_photo(photo=random.choice(PICS), caption=START_TXT.format(message.from_user.mention),
+        await message.reply_photo(photo=random.choice(PICS), caption=START_MSG.format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [[
                 InlineKeyboardButton("➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="https://t.me/tom_holland_spider_bot?startgroup=botstart")
@@ -266,17 +266,15 @@ async def _banned_usrs(c, m):
 
 
 
-@Client.on_message(filters.private & filters.command("stats"))
-async def sts(c, m):
-    if m.from_user.id not in ADMIN_ID:
-        await m.delete()
-        return
-    await m.reply_text(
-        text=f"**📂 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂** `{await Media.count_documents()}`\n\n**⚡ TOTAL USERS :** `{await db.total_users_count()}`\n\n**🔖 TOTAL CHATS:** `{await db.total_chat_count()}`",
-        parse_mode="Markdown",
-        quote=True
-    )
-
+@Client.on_message(filters.command('total') & filters.user(ADMINS))
+async def total(bot, message):
+    """Show total files in database"""
+    msg = await message.reply("Processing...⏳", quote=True)
+    try:
+        total = await Media.count_documents()
+        await msg.edit(f'📁 Saved files: {total}')
+    except Exception as e:
+        logger.exception('Failed to c
 
 @Client.on_message(filters.command('logger') & filters.user(ADMINS))
 async def log_file(bot, message):
