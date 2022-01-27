@@ -61,11 +61,12 @@ async def filter(client, message):
                 file_id = file.file_id
                 file_name = file.file_name
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                file_link = f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}"
                 btn.append(
                     [
-                      InlineKeyboardButton(text=f"{file_name}", callback_data=f"pr0fess0r_99#{file_id}")
+                      InlineKeyboardButton(text=f"{file_name}", url=f"{file_link}")
                       ],[
-                      InlineKeyboardButton(text=f"{filename}", callback_data=f"pr0fess0r_99#{file_id}")
+                      InlineKeyboardButton(text=f"{filename}", url=f"{file_link}")
                     ]
                 )
         else:
