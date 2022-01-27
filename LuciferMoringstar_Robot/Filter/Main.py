@@ -133,13 +133,11 @@ async def group(client, message):
                 file_id = file.file_id
                 file_name = file.file_name
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
-                btn.append(
-                    [
-                      InlineKeyboardButton(text=f"{file_name}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")
-                      ],[
-                      InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")
-                    ]
-                )
+                btn.append([
+                     InlineKeyboardButton(text=f"{file_name}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")
+                     ],[
+                     InlineKeyboardButton(text=f"📂 {filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")
+                ])
         else:
             await message.reply_video(video=random.choice(SEPLLING_MODE_VIDEO), caption=SEPLLING_MODE_TEXT.format(message.from_user.mention),
                 reply_markup=InlineKeyboardMarkup(
