@@ -272,6 +272,12 @@ async def total(bot, message):
     msg = await message.reply("Processing...⏳", quote=True)
     try:
         total = await Media.count_documents()
+        users = await db.total_users_count()
+        chats = await db.total_chat_count()
+        monsize = await db.get_db_size()
+        free = 536870912 - monsize
+        monsize = get_size(monsize)
+        free = get_size(free)
         await msg.edit(f'📁 Saved files: {total}')
     except Exception as e:
         logger.exception('Failed to check total files')
