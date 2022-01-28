@@ -274,25 +274,6 @@ async def _banned_usrs(c, m):
     await m.reply_text(reply_text, True)
 
 
-
-@Client.on_message(filters.command('stats') & filters.user(ADMINS))
-async def stats(bot, message):
-    """Show total files in database"""
-    msg = await message.reply("Processing...⏳", quote=True)
-    try:
-        total = await Media.count_documents()
-        users = await db.total_users_count()
-        chats = await db.total_chat_count()
-        monsize = await db.get_db_size()
-        free = 536870912 - monsize
-        monsize = get_size(monsize)
-        free = get_size(free)
-        await msg.edit(f'📁 Saved files: {total}')
-    except Exception as e:
-        logger.exception('Failed to check total files')
-        await msg.edit(f'Error: {e}')
-
-
 @Client.on_message(filters.command('logger') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
