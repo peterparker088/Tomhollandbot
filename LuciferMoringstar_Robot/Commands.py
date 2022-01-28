@@ -18,8 +18,16 @@ LOG_CHANNEL = BROADCAST_CHANNEL
 
 db = Database(DB_URL, SESSION)
 
+#=====================================================================================##
+
+
+
 WAIT_MSG = """"<b>Processing ...</b>"""
 
+REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
+
+
+#=====================================================================================##
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
@@ -267,8 +275,8 @@ async def _banned_usrs(c, m):
 
 
 
-@Client.on_message(filters.command('total') & filters.user(ADMINS))
-async def total(bot, message):
+@Client.on_message(filters.command('stats') & filters.user(ADMINS))
+async def stats(bot, message):
     """Show total files in database"""
     msg = await message.reply("Processing...⏳", quote=True)
     try:
