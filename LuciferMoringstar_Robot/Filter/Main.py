@@ -162,6 +162,7 @@ async def group(client, message):
             }
         else:
             buttons = btn
+            buttons.append(
             [InlineKeyboardButton(text="📕1/1",callback_data="pages"),InlineKeyboardButton(text="🗑",callback_data="close"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
 
             )
