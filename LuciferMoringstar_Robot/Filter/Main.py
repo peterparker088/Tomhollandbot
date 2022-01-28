@@ -294,7 +294,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
         elif query.data == "help":
             buttons = [[
-                InlineKeyboardButton('Update Channel', callback_data='fun'),
+                InlineKeyboardButton('Update Channel', callback_data='stats'),
                 InlineKeyboardButton('Source Code', url="https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot")
                 ],[
                 InlineKeyboardButton('💫Deploy Video💫', url=f'{TUTORIAL}')
@@ -319,6 +319,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
             await query.message.edit(text=f"{RULES}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
+      elif query.data == "stats":
+        buttons = [[
+            InlineKeyboardButton('🔜  Back', callback_data='help'),
+            InlineKeyboardButton('♻️ REFRESH', callback_data='rfrsh')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        total = await Media.count_documents()
+        users = await db.total_users_count()
+        chats = await db.total_chat_count()
+        monsize = await db.get_db_size()
+        free = 536870912 - monsize
+        monsize = get_size(monsize)
+        free = get_size(free)
+        await query.message.edit_text(
+            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+    elif query.data == "rfrsh":
+        await query.answer("Fetching MongoDb DataBase")
+        buttons = [[
+            InlineKeyboardButton('🔜  Back', callback_data='help'),
+            InlineKeyboardButton('🔄 𝖱𝖾𝖿𝗋𝖾𝗌𝗁', callback_data='rfrsh')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        total = await Media.count_documents()
+        users = await db.total_users_count()
+        chats = await db.total_chat_count()
+        monsize = await db.get_db_size()
+        free = 536870912 - monsize
+        monsize = get_size(monsize)
+        free = get_size(free)
+        await query.message.edit_text(
+            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+            reply_markup=reply_markup,
+            parse_mode='html'
+      )
         elif query.data.startswith("pr0fess0r_99"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
