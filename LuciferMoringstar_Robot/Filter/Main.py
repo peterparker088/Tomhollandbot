@@ -97,7 +97,8 @@ async def filter(client, message):
 
         buttons.append(
             [InlineKeyboardButton(text="NEXT ⏩",callback_data=f"next_0_{keyword}")]
-        )    
+        )   
+        buttons.append(
             [InlineKeyboardButton(text="📕1/1",callback_data="pages"),InlineKeyboardButton(text="🗑",callback_data="close"),InlineKeyboardButton('⚠️ Rules', callback_data='rules')]
         )
         poster=None
