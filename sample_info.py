@@ -21,6 +21,13 @@ DATABASE_URI = "mongodb://[LuciferMoringstar_Robot:LuciferMoringstar_Robot@]host
 DATABASE_NAME = 'LuciferMoringstar_Robot'
 COLLECTION_NAME = 'channel_files'  # If you are using the same database, then use different collection name for each bot
 
+    # OPTIONAL - To set alternate BOT COMMANDS
+    ADD_FILTER_CMD = os.environ.get("ADD_FILTER_CMD", "add")
+    DELETE_FILTER_CMD = os.environ.get("DELETE_FILTER_CMDD", "del")
+    DELETE_ALL_CMD = os.environ.get("DELETE_ALL_CMDD", "delall")
+    CONNECT_COMMAND = os.environ.get("CONNECT_COMMANDD", "connect")
+    DISCONNECT_COMMAND = os.environ.get("DISCONNECT_COMMANDD", "disconnect")
+
 # Messages
 START_MSG = """
 **Hi, I'm Media Search bot**
