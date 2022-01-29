@@ -136,10 +136,10 @@ async def group(client, message):
                 reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url="https://google.com/search?q={search}")
+                        InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url=f"https://google.com/search?q={search}")
                     ],
                     [       
-                        InlineKeyboardButton(text="🗑️",callback_data="close"),
+                        InlineKeyboardButton("🔆 Spelling 🔆",callback_data="spelling"),
                         InlineKeyboardButton("⚠️ Rules", callback_data='rules')
                     ]
                 ]
@@ -402,3 +402,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer()
     else:
         await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ👀",show_alert=True)
+
+       elif query.data == "spelling":
+        await query.answer(f"""ഹെയ് {query.from_user.first_name}
+സിനിമ ലഭിക്കണം എങ്കിൽ താങ്കൾ ഗുഗിൾ നോക്കി സിനിമയുടെ correct spelling ഇവിടെ send ചെയ്യുക എങ്കിലേ താങ്കൾ ഉദ്ദേശിക്കുന്ന സിനിമ എനിക്ക് അയച്ചു തരാൻ കഴിയുകയുളളു 😀""",show_alert=True)
+
