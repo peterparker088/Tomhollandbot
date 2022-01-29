@@ -7,9 +7,9 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 if bool(os.environ.get("WEBHOOK", False)):
-    from sample_config import Config
+    from sample_info import sample_info
 else:
-    from config import Config
+    from sample_info import sample_info
 
 from database.filters_mdb import(
    add_filter,
@@ -26,7 +26,7 @@ from plugins.helpers import parser,split_quotes
 
 
 
-@Client.on_message(filters.command(Config.ADD_FILTER_CMD))
+@Client.on_message(filters.command(sample_info.ADD_FILTER_CMD))
 async def addfilter(client, message):
       
     userid = message.from_user.id
@@ -55,7 +55,7 @@ async def addfilter(client, message):
         return
 
     st = await client.get_chat_member(grp_id, userid)
-    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in Config.AUTH_USERS)):
+    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in sample_info.AUTH_USERS)):
         return
         
 
@@ -203,7 +203,7 @@ async def get_all(client, message):
         return
 
     st = await client.get_chat_member(grp_id, userid)
-    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in Config.AUTH_USERS)):
+    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in sample_info.AUTH_USERS)):
         return
 
     texts = await get_filters(grp_id)
@@ -233,7 +233,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Client.on_message(filters.command(Config.DELETE_FILTER_CMD))
+@Client.on_message(filters.command(sample_info.DELETE_FILTER_CMD))
 async def deletefilter(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -259,7 +259,7 @@ async def deletefilter(client, message):
         return
 
     st = await client.get_chat_member(grp_id, userid)
-    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in Config.AUTH_USERS)):
+    if not ((st.status == "administrator") or (st.status == "creator") or (str(userid) in sample_info.AUTH_USERS)):
         return
 
     try:
@@ -278,7 +278,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Client.on_message(filters.command(Config.DELETE_ALL_CMD))
+@Client.on_message(filters.command(sample_info.DELETE_ALL_CMD))
 async def delallconfirm(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -305,7 +305,7 @@ async def delallconfirm(client, message):
         return
 
     st = await client.get_chat_member(grp_id, userid)
-    if (st.status == "creator") or (str(userid) in Config.AUTH_USERS):
+    if (st.status == "creator") or (str(userid) in sample_info.AUTH_USERS):
         await message.reply_text(
             f"This will delete all filters from '{title}'.\nDo you want to continue??",
             reply_markup=InlineKeyboardMarkup([
@@ -360,7 +360,7 @@ async def give_filter(client,message):
                     pass
                 break 
                 
-    if Config.SAVE_USER == "yes":
+    if sample_info.SAVE_USER == "yes":
         try:
             await add_user(
                 str(message.from_user.id),
