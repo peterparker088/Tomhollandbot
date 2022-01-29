@@ -139,7 +139,7 @@ async def group(client, message):
                         InlineKeyboardButton("🕵️‍♂️ GOOGLE 🕵️‍♂️", url=f"https://google.com/search?q={search}")
                     ],
                     [       
-                        InlineKeyboardButton("🔆 Spelling 🔆",callback_data="spelling"),
+                        InlineKeyboardButton("🗑️",callback_data="close"),
                         InlineKeyboardButton("⚠️ Rules", callback_data='rules')
                     ]
                 ]
@@ -303,18 +303,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                 InlineKeyboardButton('⚠️𝖧𝖾𝗅𝗉', callback_data='help'),
                 InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍🤠', callback_data='about'),
-                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close_data')
+                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close')
                 ]]
-            await query.message.edit_text(
-            text="▣▢▢"
-        )
-        await query.message.edit_text(
-            text="▣▣▢"
-        )
-        await query.message.edit_text(
-            text="▣▣▣"
-        )
-        await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
             buttons = [[
@@ -322,7 +313,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('😈Dev😈', url="https://t.me/PeterParkerspide")
                 ],[
                 InlineKeyboardButton('⚠️𝖧𝖾𝗅𝗉', callback_data='help'),
-                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close_data')
+                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close')
                 ]]
             await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
@@ -342,7 +333,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],[
                 InlineKeyboardButton('⚠️𝖧𝖾𝗅𝗉', callback_data='help'),
                 InlineKeyboardButton('𝖠𝖻𝗈𝗎𝗍🤠', callback_data='about'),
-                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close_data')
+                InlineKeyboardButton('𝖢𝗅𝗈𝗌𝖾🗑️', callback_data='close')
                 ]]
             await query.message.edit(text=f"{SOURCE}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
@@ -409,5 +400,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         elif query.data == "pages":
             await query.answer()
+        elif query.data == "close":
+            try:
+                await query.message.reply_to_message.delete()
+                await query.message.delete()
+            except:
+                await query.message.delete()
+                
     else:
         await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ👀",show_alert=True)
