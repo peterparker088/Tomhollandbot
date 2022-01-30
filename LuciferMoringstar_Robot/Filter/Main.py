@@ -314,11 +314,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.message.edit_text(
                     text="▣▣▣"
                 )
-                await query.message.edit_text(
-                    text=f"{HELP}",
-                    reply_markup=InlineKeyboardMarkup(buttons),
-                    disable_web_page_preview=True
-            )
+                reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=Script.HELP_TXT,
+            disable_web_page_preview=True,
+            reply_markup=reply_markup,
+            parse_mode='html'
+
         elif query.data == "about":
             buttons = [[
                 InlineKeyboardButton('𝖲𝗈𝗎𝗋𝖼𝖾📦', callback_data='source'),
