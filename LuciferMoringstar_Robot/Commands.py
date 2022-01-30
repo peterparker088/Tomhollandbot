@@ -18,16 +18,6 @@ LOG_CHANNEL = BROADCAST_CHANNEL
 
 db = Database(DB_URL, SESSION)
 
-#=====================================================================================##
-
-
-
-WAIT_MSG = """"<b>Processing ...</b>"""
-
-REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
-
-
-#=====================================================================================##
 
 @Client.on_message(filters.command("start"))
 async def start(bot, message):
@@ -127,7 +117,7 @@ async def start(bot, message):
                 InlineKeyboardButton("➕ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="https://t.me/tom_holland_spider_bot?startgroup=botstart")
                 ],[
                 InlineKeyboardButton("HELP ⚙️", callback_data="help"),
-                InlineKeyboardButton("ABOUT 😎", callback_data="about")
+                InlineKeyboardButton("ABOUT 🤠", callback_data="about")
                 ]]
             )
         )
