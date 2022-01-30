@@ -163,6 +163,15 @@ async def broadcast_handler_open(_, m):
         await broadcast(m, db)
 
 
+@Client.on_message(filters.private & filters.command("stats"))
+async def sts(c, m):
+    await m.reply_text(
+        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}``",
+        parse_mode="Markdown",
+        quote=True
+    )
+
+
 @Client.on_message(filters.private & filters.command("ban_user"))
 async def ban(c, m):
     if m.from_user.id not in ADMIN_ID:
@@ -263,6 +272,19 @@ async def _banned_usrs(c, m):
     await m.reply_text(reply_text, True)
 
 
+
+@Client.on_message(filters.command('total') & filters.user(ADMINS))
+async def total(bot, message):
+    """Show total files in database"""
+    msg = await message.reply("Processing...⏳", quote=True)
+    try:
+        total = await Media.count_documents()
+        await msg.edit(f'📁 Saved files: {total}')
+    except Exception as e:
+        logger.exception('Failed to check total files')
+        await msg.edit(f'Error: {e}')
+
+
 @Client.on_message(filters.command('logger') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
@@ -309,4 +331,4 @@ async def bot_info(bot, message):
                 )
         ]
     ]
-        await query.message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
