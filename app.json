@@ -51,6 +51,10 @@
             "description": "Add some telegraph link of pictures .",
             "value": ""
         },
+        "PICS": {
+            "description": "Add some telegraph link of pictures .",
+            "value": ""
+        },
         "START_MSG": {
             "description": "Welcome message for start command",
             "value": "**Hey {} I'm ADV Auto Filter Bot**",
