@@ -51,8 +51,8 @@
             "description": "Add some telegraph link of pictures .",
             "value": ""
         },
-        "PICS": {
-            "description": "Add some telegraph link of pictures .",
+        "SEPLLING_MODE_VIDEO": {
+            "description": "Add some telegraph link of video .",
             "value": ""
         },
         "START_MSG": {
