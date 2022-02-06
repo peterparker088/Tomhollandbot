@@ -1,10 +1,7 @@
-# (c) PR0FESS0R-99
-from Script import script
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME, SEPLLING_MODE_TEXT, SEPLLING_MODE_VIDEO
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re, random, asyncio
-from pyrogram.errors import UserNotParticipant
 from LuciferMoringstar_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT, RULES, SOURCE
 
